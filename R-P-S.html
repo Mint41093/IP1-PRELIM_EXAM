@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="/R-P-S.css">
+    <script src="/R-P-S.js"></script>
+</head>
+<body>
+    <div class="startingpoint" id="startingpoint">
+        <div class="sub"><h1>ROCK - PAPER - SCISSORS</h1></div>
+        <div class="sub" id=" start">
+            <button  class="strt" id="strt" onclick="start()"><p>START</p></button>
+        </div>
+        <div style="margin-left: 20px ;" id="identity"><p>By: SweetPotato Ye</p><p>kurrt.mengorio</p></div>
+        <audio src="Assets/audio/Ocean-meme-sound.mp3" loop id="strtaudio"></audio>
+    </div>
+
+    <div class="main" id="main">
+        <div class="sub"><h1>ROCK - PAPER - SCISSORS</h1></div>
+        <div class="sub">
+            <div class="player1" id="player1">
+                <h3>BOT 1</h3>
+                <img src="/Assets/img/Profile1.jpg" alt="" class="plyrimg1" id="playrimg1">
+            </div>
+            <div class="vs" id="vs"> <h1>VS</h1></div>
+            <div class="player2" id="player2">
+                <h3>BOT 2</h3>
+                <img src="/Assets/img/Profile2.jpg" alt="" class="plyrimg2" id="playrimg2">
+            </div>
+        </div>
+
+        <div class="sub" id="bttn">
+            <button class="playbttn" id="playbttn" onclick="play()"> <h4>PLAY</h4></button>
+            <button class="resetbttn" id="restbttn" onclick="newgame()"> <h4>New Game</h4></button>
+        </div>
+
+        <div class="sub" id="score">
+            <div id="plyr1stats"> <h2>BOT 1 WINS</h2></div>
+            <div id="plyr1scr">0</div>
+            <div class="score"><h5>SCORE</h5></div>
+            <div id="plyr2scr">0</div>
+            <div id="plyr2stats"> <h2>BOT 2 WINS</h2></div>
+        </div>
+
+        <div class="sub" > <span id="result">==== --- ====</span> </div>
+    </div>
+    <button id="autop" onclick="Autoplay()">AUTO</button>
+   
+</body>
+</html>
