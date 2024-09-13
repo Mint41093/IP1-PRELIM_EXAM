@@ -35,6 +35,13 @@ body
     width: 700px;
     transition: 0.3s;
 }
+.strtsub
+{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 3%;
+}
 .strt:hover
 {
     background-color: black;
@@ -165,6 +172,8 @@ body
 }
 #plyr1stats
 {
+    font-size: 24px;
+    font-weight: bolder;
     visibility: hidden;
 }
 
@@ -200,5 +209,140 @@ body
 }
 #plyr2stats
 {
+    font-size: 24px;
+    font-weight: bolder;
     visibility: hidden;
+}
+
+@media screen and (max-width:480px) {
+    body {
+        background-image: url("/Assets/gif/ocean-ocean-meme.gif");
+        background-repeat: no-repeat;
+        background-size:480px 1040px;
+        
+    }
+    .startingpoint
+    {
+        background-image: none;
+        border:none;
+        border-radius: none
+    }
+    .startingpoint h1 {
+        font-size: 24px;
+        translate: 0px 150px;
+    }
+    .strt
+    {
+    height: 100px;
+    width: 200px;
+    font-size: 24px;
+    margin-top: 250px;
+    margin-bottom: 100px;
+    transition: 0.3s;
+    }
+
+    #autop
+    {
+        translate: 0px 550px;
+    }
+    #title 
+    {
+
+        font-size: 24px;
+    }
+    .main
+    {
+        background-image: none;
+        border:none;
+        border-radius: none;
+        height: 820px;
+        width: 370px;
+    }
+
+    .sub
+    {
+        display: flex;
+        translate: 0px 150px;
+    }
+
+    .vs
+    {
+        align-self: center;
+        margin-top: 50px;
+    }
+
+    .playbttn
+    {
+        margin-top: 20px;
+        width: 100px;
+    }
+    .resetbttn
+    {
+        width: 100px;
+    }
+
+    .score
+    {
+        align-self: center;
+    }
+    #score
+    {
+        height: max-content;
+        align-items: center;
+        gap: 5.5%;
+    }
+
+    #result
+    {
+        font-size: 20px;
+    }
+
+    .player1
+    {
+        width: 100px;
+    }
+
+    .player1 img
+    {
+        translate: 4px;
+    }
+    .plyrimg1
+    {
+        height: 80px;
+        width:80px;
+    }
+
+    #plyr1scr
+    {
+        font-size: 20px;
+        font-weight: bolder;
+    }
+    #plyr1stats
+    {
+        font-size: 14px;
+    }
+
+    .player2
+    {
+        width: 100px;
+    }
+    .plyrimg2
+    {
+        height: 80px;
+        width: 80px;
+    }
+
+    .player2 img
+    {
+        translate: 4px;
+    }
+    #plyr2scr
+    {
+        font-size: 20px;
+        font-weight: bolder;
+    }
+    #plyr2stats
+    {
+        font-size: 14px;
+    }
 }

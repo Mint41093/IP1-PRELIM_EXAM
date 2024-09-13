@@ -41,7 +41,6 @@ async function play()
     if(iswhite != true)
     {   // let main = document.getElementById("main")
         // main.style.backgroundColor = "dimgray"
-        console.log(iswhite)
     }
 
     let Bot1 = document.getElementById("playrimg1");
@@ -77,57 +76,53 @@ async function play()
     let scr1 = document.getElementById("plyr1scr");
     let scr2 = document.getElementById("plyr2scr");
 
-    if(R1 === R2)
-    {
+    if (R1 === R2 ) {
         Bot1.style.borderColor = "limegreen";
         Bot2.style.borderColor = "limegreen";
+    }else if (R1 === 2 && R2 === 1 || R1 === 3 && R2 == 2 || R1 == 1 && R2 === 3) {
+        Bot1.style.borderColor = "limegreen";
+        Bot2.style.borderColor = "red";
+    }else  {
+        Bot1.style.borderColor = "red";
+        Bot2.style.borderColor = "limegreen";
+    }  
+    if(R1 === R2)
+    {
         await new Promise(r => setTimeout(r, 650));
         res.innerHTML = "==== DRAW ====";
         draw.play();
     }else if(R1 === 1 && R2 === 2)
     {
-        Bot1.style.borderColor = "red";
-        Bot2.style.borderColor = "limegreen";
         await new Promise(r => setTimeout(r, 650));
         res.innerHTML = "==== BOT 2 WON ====";
         scr2.innerHTML = parseInt(scr2.innerHTML) + 1;
         paudio.play();
     }else if(R1 === 1 && R2 === 3)
     {
-        Bot1.style.borderColor = "limegreen";
-        Bot2.style.borderColor = "red";
         await new Promise(r => setTimeout(r, 650));
         res.innerHTML = "==== BOT 1 WON ====";
         scr1.innerHTML = parseInt(scr1.innerHTML) + 1;
         raudio.play();
     }else if(R1 === 2 && R2 === 1)
     {
-        Bot1.style.borderColor = "limegreen";
-        Bot2.style.borderColor = "red";
         await new Promise(r => setTimeout(r, 650));
         res.innerHTML = "==== BOT 1 WON ====";
         scr1.innerHTML = parseInt(scr1.innerHTML) + 1;
         paudio.play();
     }else if(R1 === 2 && R2 === 3)
     {
-        Bot1.style.borderColor = "red";
-        Bot2.style.borderColor = "limegreen";
         await new Promise(r => setTimeout(r, 650));
         res.innerHTML = "==== BOT 2 WON ====";
         scr2.innerHTML = parseInt(scr2.innerHTML) + 1;
         saudio.play();
     }else if(R1 == 3 && R2 == 1)
     {
-        Bot1.style.borderColor = "red";
-        Bot2.style.borderColor = "limegreen";
         await new Promise(r => setTimeout(r, 650));
         res.innerHTML = "==== BOT 2 WON ====";
         scr2.innerHTML = parseInt(scr2.innerHTML) + 1;
         raudio.play();
     }else if(R1 === 3 && R2 === 2)
     {
-        Bot1.style.borderColor = "limegreen";
-        Bot2.style.borderColor = "red";
         await new Promise(r => setTimeout(r, 650));
         res.innerHTML = "==== BOT 1 WON ====";
         scr1.innerHTML = parseInt(scr1.innerHTML) + 1;
@@ -182,7 +177,6 @@ async function play()
         pb.style.display = "none";
         ng.style.display = "block";
         iswhite = true;
-        console.log(iswhite)
 
         let DR = Math.floor(Math.random() *4)+1;
         if(DR === 1)
@@ -251,7 +245,6 @@ function newgame()
         ap.style.display = "block";
 
         iswhite = false;
-        console.log(iswhite)
     }
     else
     {
