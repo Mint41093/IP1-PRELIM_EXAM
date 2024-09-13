@@ -1,5 +1,6 @@
 let iswhite = false;
-let st = true  
+let autoplay = false;
+let st = true; 
 let profile1 = "Assets/img/Profile1.jpg";
 let profile2 = "Assets/img/Profile2.jpg";
 
@@ -37,11 +38,8 @@ async function play()
     let pb = document.getElementById("playbttn");
     let res = document.getElementById("result");
     let ng = document.getElementById("restbttn");
-
-    if(iswhite != true)
-    {   // let main = document.getElementById("main")
-        // main.style.backgroundColor = "dimgray"
-    }
+    pb.style.visibility = "hidden";
+    console.log(autoplay)
 
     let Bot1 = document.getElementById("playrimg1");
     let R1 = Math.floor(Math.random() *3)+1;
@@ -129,6 +127,13 @@ async function play()
         saudio.play();
     }
         
+    await new Promise(r => setTimeout(r, 2000));
+    Bot1.style.borderColor = "transparent";
+    Bot2.style.borderColor = "transparent";
+    Bot1.src = profile1;
+    Bot2.src = profile2;
+    res.innerHTML = "==== --- ====";
+
     let stat1 = document.getElementById("plyr1stats")
     let stat2 = document.getElementById("plyr2stats")
 
@@ -137,15 +142,14 @@ async function play()
         stat1.style.visibility = "visible";
         Bot1.style.scale = "1.2"
         Bot2.style.scale = "0.8"
-        await new Promise(r => setTimeout(r, 2000));
         Bot1.src = profile1;
         Bot2.src = profile2;
         let ap = document.getElementById("autop");
         ap.style.display = "none";
-        pb.style.display = "none"
-        ng.style.display = "block"
+        pb.style.display = "none";
+        pb.style.visibility = "hidden";
+        ng.style.display = "block";
         iswhite = true;
-        console.log(iswhite)
 
         let DR = Math.floor(Math.random() *4)+1;
         if(DR === 1)
@@ -169,15 +173,14 @@ async function play()
         stat2.style.visibility = "visible";
         Bot2.style.scale = "1.2"
         Bot1.style.scale = "0.8"
-        await new Promise(r => setTimeout(r, 2000));
         Bot2.src = profile2;
         Bot1.src = profile1;
         let ap = document.getElementById("autop");
         ap.style.display = "none";
         pb.style.display = "none";
+        pb.style.visibility = "hidden";
         ng.style.display = "block";
         iswhite = true;
-
         let DR = Math.floor(Math.random() *4)+1;
         if(DR === 1)
         {
@@ -196,20 +199,22 @@ async function play()
             win4.play();
         }
     } 
-    await new Promise(r => setTimeout(r, 2500));
-    Bot1.style.borderColor = "transparent";
-    Bot2.style.borderColor = "transparent";
-    Bot1.src = profile1;
-    Bot2.src = profile2;
-    res.innerHTML = "==== --- ====";
+
+    if(autoplay != true && iswhite !=true)
+        {
+            pb.style.display = "block";
+            pb.style.visibility = "visible";
+        }else
+        {
+            pb.style.display = "none";
+            pb.style.visibility = "hidden";
+        }
 }
 
 function newgame()
 {
     if(iswhite = true)
     {
-        // let main = document.getElementById("main")
-        // main.style.backgroundColor = "gray"
         let pb = document.getElementById("playbttn");
         let ng = document.getElementById("restbttn");
 
@@ -250,6 +255,7 @@ function newgame()
     {
         iswhite = false;
     }
+    autoplay = false;
 }
 
 async function Autoplay()
@@ -258,16 +264,11 @@ async function Autoplay()
     let ap = document.getElementById("autop");
     pb.style.visibility = "hidden";
     ap.style.display = "none";
-
     while(iswhite != true)
     {
         await new Promise(r => setTimeout(r, 2000));
+        autoplay = true;
         play();
-        // let main = document.getElementById("main")
-        // main.style.backgroundColor = "green"
-        console.log(iswhite)
-        //Ayaw sir gumana ng sleep function, d pala parehas sa c++ 
-        // (Naghanap nalang ako sir sa net hahaha)
         await new Promise(r => setTimeout(r, 3500));
         let res = document.getElementById("result");
         res.innerHTML = "==== --- ====";

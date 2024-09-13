@@ -93,7 +93,6 @@ body
     align-content: center;
     gap: 3%;
 }
-
 .vs
 {
     align-self: center;
@@ -103,9 +102,10 @@ body
 
 #bttn :hover
 {
+    scale: 0.95;
     background-color: black;
+    border-color: white;
     color: white;
-    transition: 0.2s;
 }
 .playbttn
 {
@@ -308,6 +308,9 @@ body
     }
     .plyrimg1
     {
+        border:3px;
+        border-style: solid;
+        border-color: transparent;
         height: 80px;
         width:80px;
     }
@@ -328,6 +331,9 @@ body
     }
     .plyrimg2
     {
+        border:3px;
+        border-style: solid;
+        border-color: transparent;
         height: 80px;
         width: 80px;
     }
