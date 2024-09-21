@@ -13,9 +13,7 @@ let saudio = new Audio("Assets/audio/sus-meme-sound.mp3");
 
 let draw = new Audio("Assets/audio/not-bad.mp3");
 let win1 = new Audio("Assets/audio/talo-sorry-sorry.mp3");
-let win2 = new Audio("Assets/audio/meme-de-creditos");
-let win3 = new Audio("Assets/audio/funny-laughing-sound.mp3");
-let win4 = new Audio("Assets/audio/laughing-man.mp3");
+let win2 = new Audio("Assets/audio/laughing-man.mp3");
 
 function start()
 {
@@ -151,7 +149,7 @@ async function play()
         ng.style.display = "block";
         iswhite = true;
 
-        let DR = Math.floor(Math.random() *4)+1;
+        let DR = Math.floor(Math.random() *2)+1;
         if(DR === 1)
         {
             win1.play();
@@ -160,14 +158,7 @@ async function play()
         {
             win2.play();
         }
-        else if(DR === 3)
-        {
-            win3.play();
-        }
-        else
-        {
-            win4.play();
-        }
+        
     }else if(scr2.innerHTML === "3")
     {
         stat2.style.visibility = "visible";
@@ -181,7 +172,7 @@ async function play()
         pb.style.visibility = "hidden";
         ng.style.display = "block";
         iswhite = true;
-        let DR = Math.floor(Math.random() *4)+1;
+        let DR = Math.floor(Math.random() *3)+1;
         if(DR === 1)
         {
             win1.play();
@@ -193,10 +184,6 @@ async function play()
         else if(DR === 3)
         {
             win3.play();
-        }
-        else
-        {
-            win4.play();
         }
     } 
 
